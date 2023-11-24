@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gathura Cafe Order Summary</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Gathura Cafe</h1>
+    <nav>
+      <a href="#" class = "heading-hover">Menu</a>
+      <a href="#">My Order</a>
+      <a href="#">View Orders</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Order Summary</h2>
+
+    <table>
+      <td width = 500>
+    
+        <title>Gathura Cafe Menu</title>
+        <style>
+          body {
+            font-family: sans-serif;
+            text-align: center;
+          }
+    
+          .menu-item {
+            display: inline-block;
+            margin: 10px;
+          }
+    
+          .menu-item img {
+            width: 50px;
+            height: 50px;
+          }
+    
+          .menu-item p {
+            font-size: 16px;
+            margin-top: 5px;
+          }
+    
+          .menu-item input {
+            margin-right: 5px;
+          }
+        </style>
+        </head>
+    
+        <body>
+          <h1>Gathura Cafe Menu</h1>
+           
+          <table>
+            <tr>
+              <div class="menu-item">
+                <td>
+                  <img src="coffee.jpeg" width="60" alt="Coffee">
+                </td>
+                <td>
+                  <p>Coffee</p>
+                </td>
+                <td width=60> <button class="quantity-button" onclick="minus('quantity1', 'coffee')"> - </button></td>
+                <td width=60> <button class="quantity-button" onclick='add("quantity1" , "coffee")'> + </button></td>
+              </div>
+          
+            </tr>
+            <tr>
+          
+              <div class="menu-item">
+                <td>
+                  <img src="cupcake.jpeg" width="60" alt="Cupcake">
+                </td>
+                <td>
+                  <p>Cupcake</p>          
+                </td>
+                <td width=60> <button class="quantity-button" onclick="minus('quantity2', 'cupcake')"> - </button></td>
+                <td width=60> <button class="quantity-button"  onclick='add("quantity2" , "cupcake")'> + </button></td>
+              </div>
+          
+            </tr>
+            <tr>
+          
+              <div class="menu-item">
+                <td>
+                  <img src="fries.jpeg" width="60" alt="Fries">
+                </td>
+                <td>
+                  <p>Fries</p>          
+                </td>
+                <td width=60> <button class="quantity-button" onclick="minus('quantity3', 'fries')"> - </button></td>
+                <td width=60> <button class="quantity-button" onclick="add('quantity3', 'fries')"> + </button></td>
+              </div>
+          
+            </tr>
+            <tr>
+              <div class="menu-item">
+                <td>
+                  <img src="burger.jpeg" width="60" alt="Burger">
+                </td>
+                <td>
+                  <p>Burger</p>
+                </td>
+                <td width=60> <button class="quantity-button" onclick="minus('quantity4', 'burger')"> - </button></td>
+                <td width=60> <button class="quantity-button" onclick="add('quantity4','burger')"> + </button></td>
+              </div>
+            </tr>
+          </table>
+          <p>Thank you for choosing Gathura Cafe!!!</p>
+    
+    
+      </td>
+      <td width 500>
+    
+        <table class="order-summary">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>QTY</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Coffee</td>
+              <td><p id="quantity1">1</p></td>
+              <td><p><span id="coffee">100</span> ksh</p></td>
+            </tr>
+            <tr>
+              <td>Cupcake</td>
+              <td><p id="quantity2">1</p></td>
+              <td><p><span id="cupcake">50</span> ksh</p></td>
+            </tr>
+            <tr>
+              <td>Fries</td>
+              <td><p id="quantity3"> 1</p></td>
+              <td><span id="fries">150</span> KSH</td>
+            </tr>
+            <tr>
+              <td>Burger</td>
+              <td><p id="quantity4"> 1</p></td>
+              <td><span id="burger">90</span> KSH</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>Total</th>
+              <th colspan="2"><span id="totalPriceStuff">390 </span>KSH</th>
+            </tr>
+          </tfoot>
+        </table>
+      </td>
+    </table>
+
+    <button type="submit" class="checkout-button" onclick="submit()">Checkout</button>
+  </main>
+  <p > Coffee price = <span id="receipt"></span></p>
+  <p > Cupcake price = <span id="receipt2"></span></p>
+  <p > fries price = <span id="receipt3"></span></p>
+  <p > Burger price = <span id="receipt4"></span></p>
+  <p > Total price = <span id="receipt5"></span></p>
+<script>
+  var x = 0
+  var y = 0
+  function add(var1, var2) {
+    //var price_item = parseInt(document.getElementById(var2).textContent)
+    if (var2 == "coffee")
+    {
+      x = 1
+      y = 100
+    }
+    else if (var2 == "cupcake")
+    {
+      x = 1
+      y = 50
+    }
+    else if (var2 == "fries")
+    {
+      x = 1
+      y = 150
+    }
+    else if (var2 == "burger")
+    {
+      x = 1
+      y = 90
+    }
+   
+    var num = document.getElementById(var1);
+    num.innerHTML = x + parseInt(num.textContent);
+   
+    
+    var price = document.getElementById(var2);
+    
+    price.innerHTML = y + parseInt(price.textContent);
+
+    totalPrice()
+
+    
+  }
+
+  function minus(var1, var2) {
+    //var price_item = parseInt(document.getElementById(var2).textContent)
+    if (var2 == "coffee")
+    {
+      x = 1
+      y = 100
+    }
+    else if (var2 == "cupcake")
+    {
+      x = 1
+      y = 50
+    }
+    else if (var2 == "fries")
+    {
+      x = 1
+      y = 150
+    }
+    else if (var2 == "burger")
+    {
+      x = 1
+      y = 90
+    }
+   
+    var num = document.getElementById(var1);
+    num.innerHTML = parseInt(num.textContent) - x;
+   
+    
+    var price = document.getElementById(var2);
+    
+    price.innerHTML =parseInt(price.textContent) - y;
+
+    totalPrice()
+
+    
+  }
+  function totalPrice()
+  {
+    var totalPrice = parseInt(document.getElementById("coffee").textContent);
+    totalPrice +=  parseInt(document.getElementById("cupcake").textContent);
+    totalPrice += parseInt(document.getElementById("fries").textContent);
+    totalPrice += parseInt(document.getElementById("burger").textContent);
+    totalPriceStuff.innerHTML = totalPrice
+  }
+  totalPrice()
+
+
+  function submit()
+  {
+    var price = document.getElementById("coffee").textContent
+    var price2 = document.getElementById("cupcake").textContent
+    var price3 = document.getElementById("fries").textContent
+    var price4 = document.getElementById("burger").textContent
+    var price5 = document.getElementById("totalPriceStuff").textContent
+
+    var receipt = document.getElementById("receipt");
+    var receipt2 = document.getElementById("receipt2");
+    var receipt3 = document.getElementById("receipt3");
+    var receipt4 = document.getElementById("receipt4");
+    var receipt5 = document.getElementById("receipt5");
+
+    receipt.innerHTML = price
+    receipt2.innerHTML = price2
+    receipt3.innerHTML = price3
+    receipt4.innerHTML = price4
+    receipt5.innerHTML = price5
+  }
+
+  
+
+</script>
+</body>
+
+</html>

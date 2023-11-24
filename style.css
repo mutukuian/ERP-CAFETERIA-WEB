@@ -1,0 +1,75 @@
+body {
+  font-family: sans-serif;
+}
+
+header {
+  background-color: #fff;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+nav {
+  float: right;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  padding: 10px;
+}
+
+main {
+  padding: 20px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+table.order-summary {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+tfoot {
+  font-weight: bold;
+}
+
+.quantity-area {
+  float: left;
+  margin-right: 10px;
+}
+
+.quantity-button {
+  background-color: #00ff00;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 30px;
+}
+
+.quantity-button:hover {
+  background-color: #ccc;
+}
+
+.quantity-button:active {
+  background-color: #00ff00;
+}
+
+.checkout-button {
+  background-color: #fff;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+  padding: 10px;
+}
+.heading-hover {
+  background-color: #ccc;
+}
